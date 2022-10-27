@@ -1,0 +1,390 @@
+/* 这里是可覆盖的范围，默认不需要覆盖 */
+
+:root {
+    /* 每种控件自己的变量，初始值可以使用基本变量的，也可以自己根据情况复写 */
+    --oi-loading-color: var(--oi-primary);
+    --oi-loading-color-a: var(--oi-primary);
+    --oi-loading-color-b: var(--oi-primary);
+
+    /* 图标对齐 */
+    --oi-icon-valign: middle;
+    --oi-icon-color: var(--oi-primary);
+    --oi-icon-width: calc(var(--oi-body-font-size) * 1.5);
+    --oi-icon-height: calc(var(--oi-body-font-size) * 1.5);
+    /* 分页控件 */
+    --oi-pager-page-padding: 0.375rem 0.75rem;
+    --oi-pager-page-line-height: 1.2;
+    --oi-pager-page-bgcolor: var(--oi-body-bg);
+    --oi-pager-page-color: var(--oi-body-color);
+    --oi-pager-disable-color: var(--oi-secondary);
+    --oi-pager-info-color: var(--oi-primary);
+    --oi-pager-info-bgcolor: transparent;
+    --oi-pager-info-curr-color: var(--oi-danger);
+    --oi-pager-page-active-bgcolor: var(--oi-primary);
+    --oi-pager-page-active-color: var(--oi-body-bg);
+    --oi-pager-page-hover-bgcolor: #6f9ab8;
+    --oi-pager-page-hover-color: var(--oi-link-hover-color);
+
+    /* 页签控件 */
+    --oi-tab-nav-padding: 0.3rem 1rem;
+    --oi-tab-nav-line-height: 1.1rem;
+
+    --oi-tab-nav-border-top: none;
+    --oi-tab-nav-border-right: none;
+    --oi-tab-nav-border-bottom: none;
+    --oi-tab-nav-border-left: none;
+    --oi-tab-nav-color: var(--oi-dark);
+    --oi-tab-nav-font: 1.2rem var(--oi-body-font-family);
+
+    --oi-tab-nav-active-border-top: none;
+    --oi-tab-nav-active-border-right: none;
+    --oi-tab-nav-active-border-bottom: var(--oi-border-width) var(--oi-border-style) var(--oi-primar);
+    --oi-tab-nav-active-border-left: none;
+    --oi-tab-nav-active-color: var(--oi-link-color);
+    --oi-tab-nav-active-font: 1.2rem var(--oi-body-font-family);
+
+
+    --oi-tab-nav-hover-border-top: none;
+    --oi-tab-nav-hover-border-right: none;
+    --oi-tab-nav-hover-border-bottom: var(--oi-border-width) var(--oi-border-style) var(--oi-danger);
+    --oi-tab-nav-hover-border-left: none;
+    --oi-tab-nav-hover-color: var(--oi-link-hover-color);
+    --oi-tab-nav-hover-font: 1.2rem var(--oi-body-font-family);
+
+    --oi-tab-nav-panes-padding: 1rem;
+
+    --oi-tab-loading-size: 5rem;
+
+    /*tree*/
+    --oi-tree-node-font: 1.2rem var(--oi-body-font-family);
+    --oi-tree-expander-color: green;
+    --oi-tree-expander-size: 1.2rem;
+    --oi-tree-node-hover-bgcolor: #cfe2ff;
+    --oi-tree-node-selected-bgcolor: #9ec5fe;
+    --oi-tree-node-selected-color: black;
+
+
+    /* buttons */
+    --oi-btn-padding-x: 0.75rem;
+    --oi-btn-padding-y: 0.375rem;
+    --oi-btn-font-family: ;
+    --oi-btn-font-size: 1rem;
+    --oi-btn-font-weight: 400;
+    --oi-btn-line-height: 1.5;
+    --oi-btn-color: #212529;
+    --oi-btn-bg: transparent;
+    --oi-btn-border-width: 1px;
+    --oi-btn-border-color: transparent;
+    --oi-btn-border-radius: 0.375rem;
+    --oi-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+    --oi-btn-disabled-opacity: 0.65;
+    --oi-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--oi-btn-focus-shadow-rgb), .5);
+
+
+    --oi-btn-primary-color: #fff;
+    --oi-btn-primary-bg: #0d6efd;
+    --oi-btn-primary-border-color: #0d6efd;
+    --oi-btn-primary-hover-color: #fff;
+    --oi-btn-primary-hover-bg: #0b5ed7;
+    --oi-btn-primary-hover-border-color: #0a58ca;
+    --oi-btn-primary-focus-shadow-rgb: 49, 132, 253;
+    --oi-btn-primary-active-color: #fff;
+    --oi-btn-primary-active-bg: #0a58ca;
+    --oi-btn-primary-active-border-color: #0a53be;
+    --oi-btn-primary-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-primary-disabled-color: #fff;
+    --oi-btn-primary-disabled-bg: #0d6efd;
+    --oi-btn-primary-disabled-border-color: #0d6efd;
+
+    --oi-btn-primary-color: #fff;
+    --oi-btn-primary-bg: #6c757d;
+    --oi-btn-primary-border-color: #6c757d;
+    --oi-btn-primary-hover-color: #fff;
+    --oi-btn-primary-hover-bg: #5c636a;
+    --oi-btn-primary-hover-border-color: #565e64;
+    --oi-btn-primary-focus-shadow-rgb: 130, 138, 145;
+    --oi-btn-primary-active-color: #fff;
+    --oi-btn-primary-active-bg: #565e64;
+    --oi-btn-primary-active-border-color: #51585e;
+    --oi-btn-primary-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-primary-disabled-color: #fff;
+    --oi-btn-primary-disabled-bg: #6c757d;
+    --oi-btn-primary-disabled-border-color: #6c757d;
+
+    --oi-btn-secondary-color: #fff;
+    --oi-btn-secondary-bg: #6c757d;
+    --oi-btn-secondary-border-color: #6c757d;
+    --oi-btn-secondary-hover-color: #fff;
+    --oi-btn-secondary-hover-bg: #5c636a;
+    --oi-btn-secondary-hover-border-color: #565e64;
+    --oi-btn-secondary-focus-shadow-rgb: 130, 138, 145;
+    --oi-btn-secondary-active-color: #fff;
+    --oi-btn-secondary-active-bg: #565e64;
+    --oi-btn-secondary-active-border-color: #51585e;
+    --oi-btn-secondary-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-secondary-disabled-color: #fff;
+    --oi-btn-secondary-disabled-bg: #6c757d;
+    --oi-btn-secondary-disabled-border-color: #6c757d;
+
+
+    --oi-btn-sucess-color: #fff;
+    --oi-btn-sucess-bg: #198754;
+    --oi-btn-sucess-border-color: #198754;
+    --oi-btn-sucess-hover-color: #fff;
+    --oi-btn-sucess-hover-bg: #157347;
+    --oi-btn-sucess-hover-border-color: #146c43;
+    --oi-btn-sucess-focus-shadow-rgb: 60, 153, 110;
+    --oi-btn-sucess-active-color: #fff;
+    --oi-btn-sucess-active-bg: #146c43;
+    --oi-btn-sucess-active-border-color: #13653f;
+    --oi-btn-sucess-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-sucess-disabled-color: #fff;
+    --oi-btn-sucess-disabled-bg: #198754;
+    --oi-btn-sucess-disabled-border-color: #198754;
+
+    --oi-btn-info-color: #000;
+    --oi-btn-info-bg: #0dcaf0;
+    --oi-btn-info-border-color: #0dcaf0;
+    --oi-btn-info-hover-color: #000;
+    --oi-btn-info-hover-bg: #31d2f2;
+    --oi-btn-info-hover-border-color: #25cff2;
+    --oi-btn-info-focus-shadow-rgb: 11, 172, 204;
+    --oi-btn-info-active-color: #000;
+    --oi-btn-info-active-bg: #3dd5f3;
+    --oi-btn-info-active-border-color: #25cff2;
+    --oi-btn-info-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-info-disabled-color: #000;
+    --oi-btn-info-disabled-bg: #0dcaf0;
+    --oi-btn-info-disabled-border-color: #0dcaf0;
+
+    --oi-btn-warning-color: #000;
+    --oi-btn-warning-bg: #ffc107;
+    --oi-btn-warning-border-color: #ffc107;
+    --oi-btn-warning-hover-color: #000;
+    --oi-btn-warning-hover-bg: #ffca2c;
+    --oi-btn-warning-hover-border-color: #ffc720;
+    --oi-btn-warning-focus-shadow-rgb: 217, 164, 6;
+    --oi-btn-warning-active-color: #000;
+    --oi-btn-warning-active-bg: #ffcd39;
+    --oi-btn-warning-active-border-color: #ffc720;
+    --oi-btn-warning-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-warning-disabled-color: #000;
+    --oi-btn-warning-disabled-bg: #ffc107;
+    --oi-btn-warning-disabled-border-color: #ffc107;
+
+    --oi-btn-danger-color: #fff;
+    --oi-btn-danger-bg: #dc3545;
+    --oi-btn-danger-border-color: #dc3545;
+    --oi-btn-danger-hover-color: #fff;
+    --oi-btn-danger-hover-bg: #bb2d3b;
+    --oi-btn-danger-hover-border-color: #b02a37;
+    --oi-btn-danger-focus-shadow-rgb: 225, 83, 97;
+    --oi-btn-danger-active-color: #fff;
+    --oi-btn-danger-active-bg: #b02a37;
+    --oi-btn-danger-active-border-color: #a52834;
+    --oi-btn-danger-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-danger-disabled-color: #fff;
+    --oi-btn-danger-disabled-bg: #dc3545;
+    --oi-btn-danger-disabled-border-color: #dc3545;
+
+    --oi-btn-light-color: #000;
+    --oi-btn-light-bg: #f8f9fa;
+    --oi-btn-light-border-color: #f8f9fa;
+    --oi-btn-light-hover-color: #000;
+    --oi-btn-light-hover-bg: #d3d4d5;
+    --oi-btn-light-hover-border-color: #c6c7c8;
+    --oi-btn-light-focus-shadow-rgb: 211, 212, 213;
+    --oi-btn-light-active-color: #000;
+    --oi-btn-light-active-bg: #c6c7c8;
+    --oi-btn-light-active-border-color: #babbbc;
+    --oi-btn-light-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-light-disabled-color: #000;
+    --oi-btn-light-disabled-bg: #f8f9fa;
+    --oi-btn-light-disabled-border-color: #f8f9fa;
+
+    --oi-btn-dark-color: #fff;
+    --oi-btn-dark-bg: #212529;
+    --oi-btn-dark-border-color: #212529;
+    --oi-btn-dark-hover-color: #fff;
+    --oi-btn-dark-hover-bg: #424649;
+    --oi-btn-dark-hover-border-color: #373b3e;
+    --oi-btn-dark-focus-shadow-rgb: 66, 70, 73;
+    --oi-btn-dark-active-color: #fff;
+    --oi-btn-dark-active-bg: #4d5154;
+    --oi-btn-dark-active-border-color: #373b3e;
+    --oi-btn-dark-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-dark-disabled-color: #fff;
+    --oi-btn-dark-disabled-bg: #212529;
+    --oi-btn-dark-disabled-border-color: #212529;
+
+    --oi-btn-outline-primary-color: #0d6efd;
+    --oi-btn-outline-primary-border-color: #0d6efd;
+    --oi-btn-outline-primary-hover-color: #fff;
+    --oi-btn-outline-primary-hover-bg: #0d6efd;
+    --oi-btn-outline-primary-hover-border-color: #0d6efd;
+    --oi-btn-outline-primary-focus-shadow-rgb: 13, 110, 253;
+    --oi-btn-outline-primary-active-color: #fff;
+    --oi-btn-outline-primary-active-bg: #0d6efd;
+    --oi-btn-outline-primary-active-border-color: #0d6efd;
+    --oi-btn-outline-primary-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-outline-primary-disabled-color: #0d6efd;
+    --oi-btn-outline-primary-disabled-bg: transparent;
+    --oi-btn-outline-primary-disabled-border-color: #0d6efd;
+    --oi-outline-primary-gradient: none;
+
+    --oi-btn-outline-secondary-color: #6c757d;
+    --oi-btn-outline-secondary-border-color: #6c757d;
+    --oi-btn-outline-secondary-hover-color: #fff;
+    --oi-btn-outline-secondary-hover-bg: #6c757d;
+    --oi-btn-outline-secondary-hover-border-color: #6c757d;
+    --oi-btn-outline-secondary-focus-shadow-rgb: 108, 117, 125;
+    --oi-btn-outline-secondary-active-color: #fff;
+    --oi-btn-outline-secondary-active-bg: #6c757d;
+    --oi-btn-outline-secondary-active-border-color: #6c757d;
+    --oi-btn-outline-secondary-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-outline-secondary-disabled-color: #6c757d;
+    --oi-btn-outline-secondary-disabled-bg: transparent;
+    --oi-btn-outline-secondary-disabled-border-color: #6c757d;
+    --oi-outline-secondary-gradient: none;
+
+    --oi-btn-outline-success-color: #198754;
+    --oi-btn-outline-success-border-color: #198754;
+    --oi-btn-outline-success-hover-color: #fff;
+    --oi-btn-outline-success-hover-bg: #198754;
+    --oi-btn-outline-success-hover-border-color: #198754;
+    --oi-btn-outline-success-focus-shadow-rgb: 25, 135, 84;
+    --oi-btn-outline-success-active-color: #fff;
+    --oi-btn-outline-success-active-bg: #198754;
+    --oi-btn-outline-success-active-border-color: #198754;
+    --oi-btn-outline-success-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-outline-success-disabled-color: #198754;
+    --oi-btn-outline-success-disabled-bg: transparent;
+    --oi-btn-outline-success-disabled-border-color: #198754;
+    --oi-outline-success-gradient: none;
+
+    --oi-btn-outline-info-color: #0dcaf0;
+    --oi-btn-outline-info-border-color: #0dcaf0;
+    --oi-btn-outline-info-hover-color: #000;
+    --oi-btn-outline-info-hover-bg: #0dcaf0;
+    --oi-btn-outline-info-hover-border-color: #0dcaf0;
+    --oi-btn-outline-info-focus-shadow-rgb: 13, 202, 240;
+    --oi-btn-outline-info-active-color: #000;
+    --oi-btn-outline-info-active-bg: #0dcaf0;
+    --oi-btn-outline-info-active-border-color: #0dcaf0;
+    --oi-btn-outline-info-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-outline-info-disabled-color: #0dcaf0;
+    --oi-btn-outline-info-disabled-bg: transparent;
+    --oi-btn-outline-info-disabled-border-color: #0dcaf0;
+    --oi-outline-info-gradient: none;
+
+    --oi-btn-outline-warning-color: #ffc107;
+    --oi-btn-outline-warning-border-color: #ffc107;
+    --oi-btn-outline-warning-hover-color: #000;
+    --oi-btn-outline-warning-hover-bg: #ffc107;
+    --oi-btn-outline-warning-hover-border-color: #ffc107;
+    --oi-btn-outline-warning-focus-shadow-rgb: 255, 193, 7;
+    --oi-btn-outline-warning-active-color: #000;
+    --oi-btn-outline-warning-active-bg: #ffc107;
+    --oi-btn-outline-warning-active-border-color: #ffc107;
+    --oi-btn-outline-warning-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-outline-warning-disabled-color: #ffc107;
+    --oi-btn-outline-warning-disabled-bg: transparent;
+    --oi-btn-outline-warning-disabled-border-color: #ffc107;
+    --oi-outline-warning-gradient: none;
+
+
+    --oi-btn-outline-danger-color: #dc3545;
+    --oi-btn-outline-danger-border-color: #dc3545;
+    --oi-btn-outline-danger-hover-color: #fff;
+    --oi-btn-outline-danger-hover-bg: #dc3545;
+    --oi-btn-outline-danger-hover-border-color: #dc3545;
+    --oi-btn-outline-danger-focus-shadow-rgb: 220, 53, 69;
+    --oi-btn-outline-danger-active-color: #fff;
+    --oi-btn-outline-danger-active-bg: #dc3545;
+    --oi-btn-outline-danger-active-border-color: #dc3545;
+    --oi-btn-outline-danger-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-outline-danger-disabled-color: #dc3545;
+    --oi-btn-outline-danger-disabled-bg: transparent;
+    --oi-btn-outline-danger-disabled-border-color: #dc3545;
+    --oi-outline-danger-gradient: none;
+
+    --oi-btn-outline-light-color: #f8f9fa;
+    --oi-btn-outline-light-border-color: #f8f9fa;
+    --oi-btn-outline-light-hover-color: #000;
+    --oi-btn-outline-light-hover-bg: #f8f9fa;
+    --oi-btn-outline-light-hover-border-color: #f8f9fa;
+    --oi-btn-outline-light-focus-shadow-rgb: 248, 249, 250;
+    --oi-btn-outline-light-active-color: #000;
+    --oi-btn-outline-light-active-bg: #f8f9fa;
+    --oi-btn-outline-light-active-border-color: #f8f9fa;
+    --oi-btn-outline-light-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-outline-light-disabled-color: #f8f9fa;
+    --oi-btn-outline-light-disabled-bg: transparent;
+    --oi-btn-outline-light-disabled-border-color: #f8f9fa;
+    --oi-outline-light-gradient: none;
+
+    --oi-btn-outline-dark-color: #212529;
+    --oi-btn-outline-dark-border-color: #212529;
+    --oi-btn-outline-dark-hover-color: #fff;
+    --oi-btn-outline-dark-hover-bg: #212529;
+    --oi-btn-outline-dark-hover-border-color: #212529;
+    --oi-btn-outline-dark-focus-shadow-rgb: 33, 37, 41;
+    --oi-btn-outline-dark-active-color: #fff;
+    --oi-btn-outline-dark-active-bg: #212529;
+    --oi-btn-outline-dark-active-border-color: #212529;
+    --oi-btn-outline-dark-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --oi-btn-outline-dark-disabled-color: #212529;
+    --oi-btn-outline-dark-disabled-bg: transparent;
+    --oi-btn-outline-dark-disabled-border-color: #212529;
+    --oi-outline-dark-gradient: none;
+
+    --oi-btn-font-weight: var(--oi-btn-link-font-weight, 400);
+    --oi-btn-color: var(--oi-btn-link-color, var(--oi-link-color));
+    --oi-btn-bg: var(--oi-btn-link-bg, transparent);
+    --oi-btn-border-color: var(--oi-btn-link-border-color, transparent);
+    --oi-btn-hover-color: var(--oi-btn-link-hover-color, var(--oi-link-hover-color));
+    --oi-btn-hover-border-color: var(--oi-btn-link-hover-border-color, transparent);
+    --oi-btn-active-color: var(--oi-btn-link-active-color, var(--oi-link-hover-color));
+    --oi-btn-active-border-color: var(--oi-btn-link-active-border-color, transparent);
+    --oi-btn-disabled-color: var(--oi-btn-link-disabled-color, #6c757d);
+    --oi-btn-disabled-border-color: var(--oi-btn-link-disabled-border-color, transparent);
+    --oi-btn-box-shadow: var(--oi-btn-link-box-shadow, none);
+    --oi-btn-focus-shadow-rgb: var(--oi-btn-link-focus-shadow-rgb, 49, 132, 253);
+
+    --oi-btn-link-font-weight: 400;
+    --oi-btn-link-color: var(--oi-link-color);
+    --oi-btn-link-bg: transparent;
+    --oi-btn-link-border-color: transparent;
+    --oi-btn-link-hover-color: var(--oi-link-hover-color);
+    --oi-btn-link-hover-border-color: transparent;
+    --oi-btn-link-active-color: var(--oi-link-hover-color);
+    --oi-btn-link-active-border-color: transparent;
+    --oi-btn-link-disabled-color: #6c757d;
+    --oi-btn-link-disabled-border-color: transparent;
+    --oi-btn-link-box-shadow: none;
+    --oi-btn-link-focus-shadow-rgb: 49, 132, 253;
+
+    --oi-btn-lg-padding-y: 0.5rem;
+    --oi-btn-lg-padding-x: 1rem;
+    --oi-btn-lg-font-size: 1.25rem;
+    --oi-btn-lg-border-radius: 0.5rem;
+
+    --oi-btn-sm-padding-y: 0.25rem;
+    --oi-btn-sm-padding-x: 0.5rem;
+    --oi-btn-sm-font-size: 0.875rem;
+    --oi-btn-sm-border-radius: 0.25rem;
+
+    /* scrollbar */
+    --oi-scrollbar-bg: transparent;
+    --oi-scrollbar-hover-bg: rgb(204, 63, 169);
+
+
+}
+
+
+
+
+/* :root::theme(oi-button-default) {
+    color: rebeccapurple;
+    padding: .8rem 1rem;
+} */

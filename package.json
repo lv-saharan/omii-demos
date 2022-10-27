@@ -1,0 +1,48 @@
+{
+  "name": "omii-demos",
+  "version": "1.0.0",
+  "description": "omii and ui demos",
+  "type": "module",
+  "externals": {
+    "omii": "http://localhost:8990/omii.js",
+    "omii-ui": "http://localhost:8991/omii-ui.js"
+  },
+  "localExternals": {
+    "omii": "/es-lib/omii/latest/omii.js",
+    "omii-ui": "/es-lib/omii-ui/latest/omii-ui.js"
+  },
+  "localDev": {
+    "server": {
+      "port": 8932
+    }
+  },
+  "scripts": {
+    "start": "node esbuild.js local",
+    "dev": "node esbuild.js dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lv-saharan/omii-demos.git"
+  },
+  "keywords": [
+    "omii",
+    "omii-ui",
+    "bootstrap",
+    "demos"
+  ],
+  "author": "Lv-saharan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lv-saharan/omii-demos/issues"
+  },
+  "homepage": "https://github.com/lv-saharan/omii-demos#readme",
+  "devDependencies": {
+    "esbuild": "^0.14.49",
+    "esbuild-sass-plugin": "^2.3.0",
+    "local-dev-server": "^1.0.12"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.0.3",
+    "mitt": "^3.0.0"
+  }
+}
