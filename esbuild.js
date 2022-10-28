@@ -40,7 +40,7 @@ entryRoots.forEach(dir => {
 console.log("find entryPoints", entryPoints)
 
 const externalRegxes = []
-const externals = (mode == "dev" ? pkg.externals : pkg.localExternals) ?? {}
+const externals = (mode == "local" ? pkg.externals : pkg.devExternals) ?? {}
 for (let key in externals) {
     const filter = new RegExp(`^${key}$`)
     externalRegxes.push({

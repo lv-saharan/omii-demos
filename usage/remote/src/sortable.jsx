@@ -86,6 +86,12 @@ const App = uniqueTag(
     async installed() {
       const Sortable = await sortable.use();
       Sortable.create(this.$(".table>tbody"), {
+        setData: (
+          /** DataTransfer */ dataTransfer,
+          /** HTMLElement*/ dragEl
+        ) => {
+          dataTransfer.setData("item", dragEl.dataset.index); // `dataTransfer` object of HTML5 DragEvent
+        },
         // Element dragging ended
         onEnd: (/**Event*/ evt) => {
           console.log(evt);
@@ -112,9 +118,31 @@ const App = uniqueTag(
           <oi-tree
             nodes={nodes}
             sortable
-            onSorted={(evt) => {
-                //从from 里删除，在to里面加入即可
+            onDragOver={(evt) => {
+              evt.dataTransfer.effectAllowed = "all";
+              evt.dataTransfer.dropEffect = "move";
+              //取消默认事件，才可以触发drop
+              evt.preventDefault();
+              console.log(evt);
+            }}
+            onDrop={(evt) => {
+              console.log(evt);
+              let node = evt.path.find((el) => el.tagName == "OI-TREE-NODE");
+              console.log(
+                "drop to ",
+                node.node,
+                evt.dataTransfer.getData("item")
+              );
+            }}
+            onSorted={(evt, target) => {
+              //从from 里删除，在to里面加入即可
               console.log("tree sorted", evt);
+              const { fromNodes, toNodes, fromIndex, toIndex } = evt.detail;
+              const item = fromNodes[fromIndex];
+              //一般情况需要保存到数据库
+              fromNodes.splice(fromIndex, 1);
+              toNodes.splice(toIndex, 0, item);
+              target.update();
             }}
             css={`
               :host {
