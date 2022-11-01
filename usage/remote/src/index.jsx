@@ -85,3 +85,4 @@ const AppTag = uniqueTag(appComponent);
 export default <AppTag />;
 
 export { default as sortable } from "./sortable";
+export { default as editor } from "./editor";
