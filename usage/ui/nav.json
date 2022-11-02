@@ -58,6 +58,13 @@
         "module": "editor"
     },
     {
+        "key": "echarts",
+        "name": "图表",
+        "icon": "chart",
+        "url": "../remote/index.js",
+        "module": "echarts"
+    },
+    {
         "key": "styles",
         "name": "样式",
         "icon": "style",

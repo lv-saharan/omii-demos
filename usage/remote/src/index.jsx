@@ -86,3 +86,4 @@ export default <AppTag />;
 
 export { default as sortable } from "./sortable";
 export { default as editor } from "./editor";
+export { default as echarts } from "./echarts";
