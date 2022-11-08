@@ -128,11 +128,13 @@ const App = uniqueTag(
             onDrop={(evt) => {
               console.log(evt);
               let node = evt.path.find((el) => el.tagName == "OI-TREE-NODE");
-              console.log(
-                "drop to ",
-                node.node,
-                evt.dataTransfer.getData("item")
-              );
+              if (node)
+                //上面table row drop here
+                console.log(
+                  "drop to ",
+                  node.node,
+                  evt.dataTransfer.getData("item")
+                );
             }}
             onSorted={(evt, target) => {
               //从from 里删除，在to里面加入即可
@@ -141,9 +143,18 @@ const App = uniqueTag(
               const item = fromNodes[fromIndex];
               //一般情况需要保存到数据库
               fromNodes.splice(fromIndex, 1);
+
               toNodes.splice(toIndex, 0, item);
               target.update();
             }}
+            node-css={`
+              .element{font-size:2rem !important;}
+              :host(.sortable-ghost)  {
+                -oi-tree-node-font:2rem;
+                color:blue;
+              }
+            
+            `}
             css={`
               :host {
                 --oi-tree-node-color: red;

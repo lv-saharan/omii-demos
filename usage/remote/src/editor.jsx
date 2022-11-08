@@ -10,7 +10,7 @@ const Part = uniqueTag(
             <legend>default</legend>
             <oi-tinymce
               style="border:solid 1px #ccc;height:500px"
-              value={this.content}
+              o-model="content"
               onChange={(evt, target) => {
                 this.content = target.value;
                 this.update();
