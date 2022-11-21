@@ -1,6 +1,12 @@
 const { h, define, Component, classNames, uniqueTag } = omii;
 const { css } = omii.ui;
 
+const options = Array.from({ length: 10 }).map((v, index) => {
+  return {
+    value: index,
+    text: "text-" + index,
+  };
+});
 const App = uniqueTag(
   class extends Component {
     static css = css.getCSSStyleSheets("reboot", "forms");
@@ -8,6 +14,21 @@ const App = uniqueTag(
     render() {
       return (
         <>
+          <h3>多选</h3>
+          <oi-select
+            values={[]}
+            options={options}
+            class="form-control"
+          ></oi-select>
+          <hr />
+          <h3>单选</h3>
+          <oi-select
+            searchable
+            options={options}
+            multiple="false"
+            class="form-control"
+          ></oi-select>
+          <hr />
           <select class="form-select" aria-label="Default select example">
             <option selected>Open this select menu</option>
             <option value="1">One</option>
