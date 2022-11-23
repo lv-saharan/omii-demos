@@ -126,9 +126,10 @@ define(
                   选中的Key：{radioedKey}
                   <hr />
                   <oi-tree
-                    node-css=".element{font-size:3rem !important;}[type=radio]{width:3rem !important;height:3rem !important;}"
+                    node-css=".element{font-size:3rem !important;}[type=radio]{width:3rem !important;height:3rem !important;} .expander-wrap{margin-right:1.2rem !important;}"
                     radio-tree
                     radioedKey={radioedKey}
+                    expander={<oi-icon name="arrow_right" size="3" color="blue" />}
                     nodes={nodes}
                     onNodeRadio={(evt) => {
                       radioedKey = evt.detail.node.key;
