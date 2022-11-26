@@ -66,7 +66,7 @@ const App = uniqueTag(
               title={this.imageFile.name}
               class="image"
               style={{
-                backgroundImage: `url(${uploader.creatPreviewUrl(this.imageFile.file)})`,
+                backgroundImage: `url(${this.imageFile.url ?? uploader.creatPreviewUrl(this.imageFile.file)})`,
               }}
               onClick={evt => {
                 evt.target.parentNode.open()
