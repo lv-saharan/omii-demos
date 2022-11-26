@@ -1,5 +1,5 @@
-const { h, define, Component, classNames, uniqueTag } = omii;
-const { css } = omii.ui;
+const { h, define, Component, classNames, uniqueTag, createRef } = omii;
+const { css, uploader } = omii.ui;
 const Slot = uniqueTag(
   class extends Component {
     static css = `:host{color:red}`;
@@ -14,19 +14,119 @@ const Slot = uniqueTag(
     }
   }
 );
-const files = [];
+const files = [
+  {
+    name: "demo",
+    type: "image/png",
+    url: "https://tse1-mm.cn.bing.net/th/id/OIP-C.gAwrrAwnrp1bDE8Z-1ibmQHaJU?w=134&h=180&c=7&r=0&o=5&dpr=2.07&pid=1.7",
+    size: 102400
+  }
+];
 const App = uniqueTag(
   class extends Component {
-  
+    css = `
+    .image{
+      width:60px;
+      height:60px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border:solid 1px #ccc;
+      
+      
+    }
+    
+    `
+    imageFile = {
+
+    }
+    data = {
+      artilceTitle: "news-1",
+      titleImages: [
+        {
+          name: "demo",
+          type: "image/png",
+          url: "https://tse1-mm.cn.bing.net/th/id/OIP-C.gAwrrAwnrp1bDE8Z-1ibmQHaJU?w=134&h=180&c=7&r=0&o=5&dpr=2.07&pid=1.7",
+          size: 102400
+        }
+      ]
+    }
+    uploaderRef = createRef()
     render() {
       return (
         <>
           单选 <oi-uploader></oi-uploader>
           <hr />
+          单选自定义
+          <oi-uploader accept="image/*" files={[this.imageFile]} onSelected={evt => {
+            this.imageFile = evt.detail.selected.at(0)
+            this.forceUpdate()
+          }} >
+            <div
+              title={this.imageFile.name}
+              class="image"
+              style={{
+                backgroundImage: `url(${uploader.creatPreviewUrl(this.imageFile.file)})`,
+              }}
+              onClick={evt => {
+                evt.target.parentNode.open()
+              }}
+            ></div>
+          </oi-uploader>
+          <hr />
           多选<oi-uploader files={files} multiple></oi-uploader>
           <hr />
           多选文件列表
           <oi-uploader files={files} multiple template="files" auto-upload action="http://127.0.0.1/upload"></oi-uploader>
+
+          <hr />
+          自定义样式
+
+          <ul>
+            {this.data.titleImages.map((file, index) => {
+              file.url = file.url ?? uploader.creatPreviewUrl(file.file);
+
+              return <li>
+                <div
+                  key={`title-image-${index}`}
+                  title={file.name}
+                  class="image"
+                  style={{
+                    backgroundImage: `url(${file.url})`,
+                  }}
+                  onClick={evt => {
+                    this.uploaderRef.current.open(index)
+                  }}
+                ></div>
+                <div>
+                  name:<input o-model={`data.titleImages[${index}].name`}></input>
+
+                </div>
+                <button onClick={evt => {
+                  this.uploaderRef.current.remove(index)
+                }}>remove</button>
+              </li>
+            })}
+          </ul>
+          <oi-uploader files={this.data.titleImages} accept="image/*" ref={this.uploaderRef} multiple auto-upload action="http://127.0.0.1/upload" onSelected={evt => {
+            this.forceUpdate()
+          }}
+            onReplaced={evt => {
+              this.forceUpdate()
+            }}
+            onRemove={evt => {
+              this.forceUpdate()
+            }}
+          >
+            <button onClick={evt => {
+              this.uploaderRef.current.open()
+            }}>自定义上传</button>
+            <button onClick={evt => [
+              alert(JSON.stringify(this.data))
+            ]}>show result</button>
+
+          </oi-uploader>
+
         </>
       );
     }
