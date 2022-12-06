@@ -90,6 +90,11 @@ const App = uniqueTag(
           </button>
           <oi-modal
             id="m3"
+            css={`
+            :host .modal{
+              --oi-modal-margin:8em!important;
+            }
+            `}
             title={
               <>
                 <oi-icon name="home" /> HOME

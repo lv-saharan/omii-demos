@@ -5,7 +5,7 @@
   "type": "module",
   "devExternals": {
     "omii": "/es-lib/omii/latest/omii.js",
-    "omii-ui": "/es-lib/omii-ui/latest/omii-ui.js"
+    "omii-ui": "http://localhost:8991/omii-ui.js"
   },
   "externals": {
     "omii": "/es-lib/omii/latest/omii.js",
