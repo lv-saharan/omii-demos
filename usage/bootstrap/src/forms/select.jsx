@@ -1,10 +1,10 @@
 const { h, define, Component, classNames, uniqueTag } = omii;
 const { css } = omii.ui;
 
-const options = Array.from({ length: 10 }).map((v, index) => {
+const options = Array.from({ length: 30 }).map((v, index) => {
   return {
     value: index,
-    text: "text-" + index,
+    text: "text-------" + index,
   };
 });
 const App = uniqueTag(
@@ -51,9 +51,7 @@ const App = uniqueTag(
             aria-label=".form-select-sm example"
           >
             <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            {Array.from({ length: 1000 }).map((v, index) => <option>{index}</option>)}
           </select>
         </>
       );
