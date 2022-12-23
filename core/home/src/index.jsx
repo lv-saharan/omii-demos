@@ -16,7 +16,7 @@ define(
       this.update$Props({ value }, { updateAttrs: true });
     }
     render() {
-      return <div>value is {this.value}</div>;
+      return <div>value is { this.value }</div>;
     }
   }
 );

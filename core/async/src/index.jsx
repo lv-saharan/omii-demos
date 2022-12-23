@@ -10,7 +10,6 @@ const sleep = n => {
   })
 }
 define("oi-async-1", class extends Component {
-
   async render() {
     await sleep(1)
     return <>
