@@ -21,6 +21,14 @@ const App = uniqueTag(
             class="form-control"
           ></oi-select>
           <hr />
+          <h3>多选 可搜索</h3>
+          <oi-select
+            searchable
+            values={[]}
+            options={options}
+            class="form-control"
+          ></oi-select>
+          <hr />
           <h3>单选</h3>
           <oi-select
             searchable
