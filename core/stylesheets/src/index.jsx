@@ -7,10 +7,11 @@ class test extends Component {
   stylesheets() {
     return [new URL(`./css/${this.style}.css`, import.meta.url).href];
   }
+  text = "一段文字";
   render() {
     return (
       <div>
-        <h1>一段文字</h1>
+        <h1>{this.text}</h1>
         <button
           onClick={() => {
             if (this.style == "style1") this.style = "style2";
@@ -26,56 +27,59 @@ class test extends Component {
 }
 const APP = uniqueTag(test);
 
-const APP2 = uniqueTag(class extends test {
-  static stylesheets = new URL("./css/default.css", import.meta.url).href;
-  style = "style2";
+const APP2 = uniqueTag(
+  class extends test {
+    static stylesheets = new URL("./css/default.css", import.meta.url).href;
+    style = "style2";
+    text = "二段文字";
+    stylesheets = new URL(`./css/${this.style}.css`, import.meta.url).href;
+  }
+);
+const APP3 = uniqueTag(
+  class extends test {
+    static stylesheets = new URL("./css/default.css", import.meta.url).href;
+    style = "style2";
+    text = "三段文字";
+    stylesheets = [
+      new URL(`./css/style3.css`, import.meta.url).href,
+      () => {
+        return new URL(`./css/${this.style}.css`, import.meta.url).href;
+      },
+    ];
 
-  stylesheets =
-    new URL(`./css/${this.style}.css`, import.meta.url).href
-
-})
-const APP3 = uniqueTag(class extends test {
-  static stylesheets = new URL("./css/default.css", import.meta.url).href;
-  style = "style2";
-
-  stylesheets = [
-    new URL(`./css/style3.css`, import.meta.url).href,
-    () => {
-      return new URL(`./css/${this.style}.css`, import.meta.url).href
-    }]
-
-  css = [
-    `
+    css = [
+      `
       button{
         color:blue;
       } 
       `,
-    () => {
-      let hour = new Date().getHours();
-      let bg;
-      if (hour < 8) {
-        bg = "red";
-      } else if (hour < 16) {
-        bg = "yellow"
-      } else {
-        bg = "green"
-      }
-      return `
+      () => {
+        let hour = new Date().getHours();
+        let bg;
+        if (hour < 8) {
+          bg = "red";
+        } else if (hour < 16) {
+          bg = "yellow";
+        } else {
+          bg = "green";
+        }
+        return `
         button{
           background-color:${bg};
         }
-        `
-    }
-  ]
-})
-let cssss = new CSSStyleSheet()
+        `;
+      },
+    ];
+  }
+);
+let cssss = new CSSStyleSheet();
 cssss.replace(`
   h1::after{
     content:'---- css style sheet!!';
     color:black;
   }
-`)
- 
+`);
+
 render(<APP />, "body");
 render(<hr />, "body");
 render(<APP2 />, "body");

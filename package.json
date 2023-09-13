@@ -4,7 +4,7 @@
   "description": "omii and ui demos",
   "type": "module",
   "devExternals": {
-    "omii": "/es-lib/omii/latest/omii.js",
+    "omii": "http://localhost:8990/omii.js",
     "omii-ui": "http://localhost:8991/omii-ui.js"
   },
   "externals": {
@@ -37,12 +37,12 @@
   },
   "homepage": "https://github.com/lv-saharan/omii-demos#readme",
   "devDependencies": {
-    "esbuild": "^0.14.49",
-    "esbuild-sass-plugin": "^2.3.0",
-    "local-dev-server": "^1.0.12"
+    "esbuild": "0.14.49",
+    "esbuild-sass-plugin": "2.3.0",
+    "local-dev-server": "1.0.12"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.0.3",
-    "mitt": "^3.0.0"
+    "@floating-ui/dom": "1.0.3",
+    "mitt": "3.0.0"
   }
 }
