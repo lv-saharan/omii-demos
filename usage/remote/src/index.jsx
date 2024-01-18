@@ -1,7 +1,7 @@
 const { h, uniqueTag, route, Component } = omii;
 export { default as user } from "./user";
 export { default as welcome } from "./welcome";
-
+export const tag ="oi-uploader"
 /**
  * 目前route不是很理想，子模块中不能继续使用
  */
