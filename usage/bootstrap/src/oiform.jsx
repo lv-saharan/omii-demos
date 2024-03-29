@@ -128,7 +128,7 @@ const App2 = uniqueTag(
     ];
     #formRef = createRef();
     installed() {
-      form.validate(this.#formRef.current);
+       form.validate(this.#formRef.current);
     }
     render() {
       return (
