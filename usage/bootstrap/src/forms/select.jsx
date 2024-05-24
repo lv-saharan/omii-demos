@@ -16,6 +16,7 @@ const App = uniqueTag(
         <>
           <h3>多选</h3>
           <oi-select
+          
             values={[]}
             options={options}
             class="form-control"
