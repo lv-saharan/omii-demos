@@ -39,6 +39,11 @@
         "icon": "account_tree"
     },
     {
+        "key": "marquee",
+        "name": "跑马灯",
+        "icon": "account_tree"
+    },
+    {
         "key": "loading",
         "name": "Loadings",
         "iconElement": "<oi-loading />"

@@ -17,10 +17,12 @@ import treePage from "./tree";
 import indexCss from "./index.scss";
 import loadingPage from "./loading";
 import classesPage from "./classes";
+import marqueePage from "./marquee";
+import marquee from "./marquee";
 //用图片小文件
 icon.useSingleMode();
 css.addStyleSheet("root");
-css.preLoad()
+css.preLoad();
 const loadRemote = async (url) => {
   let { default: module } = await import(url);
   return module;
@@ -34,6 +36,7 @@ const MODOLES = {
   pager: pagerPage,
   tree: treePage,
   loading: loadingPage,
+  marquee: marqueePage,
   classes: classesPage,
 };
 
